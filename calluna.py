@@ -3,7 +3,7 @@
 #
 # Imports Rundata file data into Postgres DB
 # By Victor Rådmark
-# Updated: 2016-05-15
+# Updated: 2016-05-18
 
 import json, argparse, configparser, pg8000, xlrd
 
