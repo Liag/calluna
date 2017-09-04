@@ -19,17 +19,19 @@ def read_info(xls):
     with open('test.txt') as outfile:
         num_cols = sheet.ncols   # Number of columns
         col_data = []
-        for row_idx in range(0, sheet.nrows):    # Iterate through rows
+        for row_idx in range(1, sheet.nrows):    # Iterate through rows
             #print('-'*40)
             #print('Row: %s' % row_idx)   # Print row number
             #for col_idx in range(0, num_cols):  # Iterate through columns
-            for col_idx in range(0, 2):  # Iterate through columns
+            for col_idx in range(0, num_cols):  # Iterate through columns
                 cell_obj = sheet.cell(row_idx, col_idx)  # Get cell object by row, col
                 #print('Column: [%s] cell_obj: [%s]' % (0, cell_obj.value))
                 col_data.append(cell_obj.value)
+
             cursor.execute(
                  "INSERT INTO rune_info (sign, place) VALUES (%s, %s)",
-                 (col_data[0], col_data[1]))
+                 (col_data[0], col_data[1])
+            )
             del col_data[:]
 
     conn.commit()
@@ -48,7 +50,7 @@ def main():
     if args.dir:
         dir_str = args.dir
     else:
-        dir_str = config['calluna']['dir']
+        dir_str = config['calluna']['file_dir']
 
     read_info(dir_str + "/RUNDATA.xls")
 

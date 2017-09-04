@@ -6,4 +6,4 @@ user = postgres
 password = 
 
 [calluna]
-dir = 
+file_dir = 

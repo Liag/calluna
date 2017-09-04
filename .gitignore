@@ -60,3 +60,9 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#calluna specific
+calluna.ini
+
+# dolphin metafile
+.directory
