@@ -1,9 +1,9 @@
 # rename to calluna.ini to use
 [db]
 host = localhost
-name = 
+name =
 user = postgres
-password = 
+password =
 
 [calluna]
-file_dir = 
+dir =
